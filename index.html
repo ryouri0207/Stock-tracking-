@@ -17,117 +17,117 @@
 *{box-sizing:border-box;margin:0;padding:0;}
 body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;min-height:100vh;padding-bottom:90px;}
 
-/* ── Header ── */
 .header{padding:18px 16px 14px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
 .header-title{font-size:13px;color:var(--text2);letter-spacing:.1em;text-transform:uppercase;}
 .lang-switcher{display:flex;background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:2px;gap:2px;}
 .lang-btn{background:none;border:none;color:var(--text3);font-size:11px;font-family:var(--sans);padding:4px 9px;border-radius:16px;cursor:pointer;transition:all .15s;white-space:nowrap;}
 .lang-btn.active{background:var(--accent);color:#000;font-weight:500;}
 
-/* ── Tab bar ── */
-.tabs{display:flex;gap:0;border-bottom:1px solid var(--border);margin:0;}
+.tabs{display:flex;border-bottom:1px solid var(--border);}
 .tab{flex:1;padding:12px 4px;text-align:center;font-size:12px;color:var(--text3);cursor:pointer;border-bottom:2px solid transparent;transition:all .15s;}
 .tab.active{color:var(--accent);border-bottom-color:var(--accent);}
 
-/* ── Summary cards ── */
-.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 14px 0;}
-.sum-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px;}
-.sum-card.full{grid-column:1/-1;}
-.sum-label{font-size:10px;color:var(--text2);text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px;}
-.sum-amount{font-family:var(--mono);font-size:22px;font-weight:500;line-height:1;}
-.sum-amount.pos{color:var(--accent);}
-.sum-amount.neg{color:var(--loss);}
-.sum-amount.zero{color:var(--text2);}
-.sum-sub{font-family:var(--mono);font-size:11px;color:var(--text3);margin-top:5px;}
-.sum-sub.pos{color:var(--accent);}
-.sum-sub.neg{color:var(--loss);}
-.divider-label{font-size:10px;color:var(--text3);letter-spacing:.08em;text-transform:uppercase;padding:20px 16px 8px;}
+/* summary top card */
+.top-sum{margin:14px 14px 0;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px;}
+.top-sum-row{display:flex;gap:0;}
+.top-sum-item{flex:1;padding:0 10px;}
+.top-sum-item:first-child{padding-left:0;border-right:1px solid var(--border);}
+.top-sum-item:last-child{padding-right:0;}
+.tsi-label{font-size:10px;color:var(--text2);text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px;}
+.tsi-val{font-family:var(--mono);font-size:20px;font-weight:500;}
+.tsi-val.pos{color:var(--accent);}
+.tsi-val.neg{color:var(--loss);}
+.tsi-val.zero{color:var(--text2);}
+.tsi-sub{font-family:var(--mono);font-size:10px;color:var(--text3);margin-top:4px;}
+.tsi-sub.pos{color:var(--accent);}
+.tsi-sub.neg{color:var(--loss);}
 
-/* ── Stock cards ── */
-.stock-list{padding:0 14px;display:flex;flex-direction:column;gap:10px;}
-.stock-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;}
-.stock-card-header{display:flex;justify-content:space-between;align-items:flex-start;padding:14px 14px 12px;cursor:pointer;}
-.sc-left{}
-.sc-code{font-family:var(--mono);font-size:14px;font-weight:500;}
-.sc-name{font-size:11px;color:var(--text2);margin-top:2px;}
-.sc-price-row{display:flex;align-items:center;gap:6px;margin-top:6px;}
-.sc-cur-price{font-family:var(--mono);font-size:13px;color:var(--text);}
-.sc-price-badge{font-size:9px;padding:1px 5px;border-radius:4px;font-family:var(--mono);}
-.badge-auto{background:var(--accent-dim);color:var(--accent);}
-.badge-manual{background:var(--warn-dim);color:var(--warn);}
-.badge-none{background:var(--surface2);color:var(--text3);}
-.sc-right{text-align:right;}
-.sc-unrealized{font-family:var(--mono);font-size:15px;font-weight:500;}
-.sc-unrealized.pos{color:var(--accent);}
-.sc-unrealized.neg{color:var(--loss);}
-.sc-unrealized.zero{color:var(--text2);}
-.sc-rate{font-family:var(--mono);font-size:11px;margin-top:2px;}
-.sc-rate.pos{color:var(--accent);}
-.sc-rate.neg{color:var(--loss);}
-.sc-realized-row{font-size:11px;color:var(--text3);margin-top:3px;}
-.sc-realized-val{font-family:var(--mono);}
-.sc-realized-val.pos{color:var(--accent);}
-.sc-realized-val.neg{color:var(--loss);}
+.section-title{font-size:10px;color:var(--text3);letter-spacing:.08em;text-transform:uppercase;padding:18px 16px 8px;}
 
-/* ── Price update row ── */
-.price-update-row{
-  display:flex;align-items:center;gap:8px;
-  padding:10px 14px;
-  background:var(--surface2);
-  border-top:1px solid var(--border);
-}
-.price-input-wrap{flex:1;display:flex;align-items:center;gap:6px;}
-.price-small-input{
-  flex:1;background:var(--bg);border:1px solid var(--border);border-radius:8px;
-  padding:8px 10px;color:var(--text);font-family:var(--mono);font-size:13px;
-  outline:none;-webkit-appearance:none;
-}
+/* stock cards */
+.stock-list{padding:0 14px;display:flex;flex-direction:column;gap:12px;}
+.stock-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;}
+
+/* card summary header */
+.card-summary{display:flex;justify-content:space-between;align-items:flex-start;padding:14px 14px 10px;cursor:pointer;}
+.cs-left .cs-code{font-family:var(--mono);font-size:15px;font-weight:500;}
+.cs-left .cs-name{font-size:11px;color:var(--text2);margin-top:2px;}
+.cs-right{text-align:right;}
+.cs-total{font-family:var(--mono);font-size:15px;font-weight:500;}
+.cs-total.pos{color:var(--accent);}
+.cs-total.neg{color:var(--loss);}
+.cs-total.zero{color:var(--text2);}
+.cs-rate{font-family:var(--mono);font-size:11px;margin-top:2px;}
+.cs-rate.pos{color:var(--accent);}
+.cs-rate.neg{color:var(--loss);}
+.cs-chevron{font-size:11px;color:var(--text3);margin-top:4px;}
+
+/* mini stat row inside card */
+.card-stats{display:flex;border-top:1px solid var(--border);}
+.cstat{flex:1;padding:10px 12px;text-align:center;}
+.cstat:not(:last-child){border-right:1px solid var(--border);}
+.cstat-label{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px;}
+.cstat-val{font-family:var(--mono);font-size:12px;color:var(--text2);}
+.cstat-val.pos{color:var(--accent);}
+.cstat-val.neg{color:var(--loss);}
+
+/* expanded detail */
+.card-detail{border-top:1px solid var(--border);}
+.detail-inner{padding:12px 14px;}
+.detail-title{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin:10px 0 6px;}
+.detail-title:first-child{margin-top:0;}
+
+/* price input row inside card */
+.price-row{display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--surface2);border-bottom:1px solid var(--border);}
+.price-small-input{flex:1;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:8px 10px;color:var(--text);font-family:var(--mono);font-size:13px;outline:none;-webkit-appearance:none;}
 .price-small-input:focus{border-color:var(--accent);}
-.btn-fetch{padding:8px 10px;background:var(--accent-dim);border:1px solid var(--accent);border-radius:8px;color:var(--accent);font-size:11px;cursor:pointer;white-space:nowrap;}
-.btn-set-price{padding:8px 12px;background:var(--accent);border:none;border-radius:8px;color:#000;font-size:11px;font-weight:500;cursor:pointer;white-space:nowrap;}
-.fetch-status{font-size:10px;color:var(--text3);}
+.btn-set-price{padding:8px 14px;background:var(--accent);border:none;border-radius:8px;color:#000;font-size:11px;font-weight:500;cursor:pointer;white-space:nowrap;}
 
-/* ── Expanded detail ── */
-.stock-detail{border-top:1px solid var(--border);padding:12px 14px;}
-.detail-section-title{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin:10px 0 6px;}
-.detail-section-title:first-child{margin-top:0;}
+/* lot rows */
+.lot-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--border);}
+.lot-row:last-child{border-bottom:none;}
+.lr-date{font-family:var(--mono);font-size:11px;color:var(--text2);}
+.lr-detail{font-size:10px;color:var(--text3);margin-top:2px;}
+.lr-right{display:flex;align-items:center;gap:6px;}
+.lr-profit{font-family:var(--mono);font-size:12px;}
+.lr-profit.pos{color:var(--accent);}
+.lr-profit.neg{color:var(--loss);}
+.lr-rate{font-size:10px;color:var(--text3);text-align:right;}
 
-/* Unrealized trades */
-.holding-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);}
-.holding-row:last-child{border-bottom:none;}
-.hr-left{}
-.hr-date{font-family:var(--mono);font-size:11px;color:var(--text2);}
-.hr-detail{font-size:10px;color:var(--text3);margin-top:2px;}
-.hr-right{text-align:right;}
-.hr-profit{font-family:var(--mono);font-size:12px;}
-.hr-profit.pos{color:var(--accent);}
-.hr-profit.neg{color:var(--loss);}
-.hr-rate{font-size:10px;color:var(--text3);}
+/* sell button on lot row */
+.btn-sell-lot{padding:4px 10px;background:var(--warn-dim);border:1px solid var(--warn);border-radius:6px;color:var(--warn);font-size:10px;cursor:pointer;white-space:nowrap;}
 
-/* Realized trades */
-.realized-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);}
-.realized-row:last-child{border-bottom:none;}
-.rr-profit{font-family:var(--mono);font-size:12px;}
-.rr-profit.pos{color:var(--accent);}
-.rr-profit.neg{color:var(--loss);}
-.rr-rate{font-size:10px;color:var(--text3);}
+/* chart inside card */
+.card-chart-wrap{height:180px;margin:8px 0 4px;position:relative;}
+.card-chart-wrap canvas{width:100%;height:100%;display:block;}
+.chart-empty-msg{height:100px;display:flex;align-items:center;justify-content:center;color:var(--text3);font-size:12px;}
+.chart-legend{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;}
+.cl-item{display:flex;align-items:center;gap:4px;font-size:10px;color:var(--text2);}
+.cl-line{width:18px;height:2px;}
 
-/* ── Chart ── */
-.chart-wrap{position:relative;height:200px;margin:8px 0 4px;}
-canvas.price-chart{width:100%;height:100%;display:block;}
-.chart-empty{height:120px;display:flex;align-items:center;justify-content:center;color:var(--text3);font-size:12px;}
+/* realized tab */
+.realized-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;margin:0 14px;padding:14px;}
+.rc-header{display:flex;justify-content:space-between;margin-bottom:10px;}
+.rc-code{font-family:var(--mono);font-size:14px;font-weight:500;}
+.rc-name{font-size:11px;color:var(--text2);margin-top:2px;}
+.rc-total{font-family:var(--mono);font-size:15px;font-weight:500;}
+.rc-total.pos{color:var(--accent);}
+.rc-total.neg{color:var(--loss);}
+.rc-rate{font-size:11px;}
+.rc-rate.pos{color:var(--accent);}
+.rc-rate.neg{color:var(--loss);}
 
-/* ── Tools ── */
+/* tools */
 .tools-row{display:flex;gap:8px;padding:0 14px;margin:14px 0 0;}
 .tool-btn{flex:1;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:10px 4px;color:var(--text2);font-size:11px;cursor:pointer;text-align:center;}
 
-/* ── FAB ── */
+/* FAB */
 .fab{position:fixed;bottom:28px;right:18px;background:var(--accent);color:#000;border:none;border-radius:28px;padding:14px 20px;font-family:var(--sans);font-size:14px;font-weight:500;cursor:pointer;display:flex;align-items:center;gap:6px;box-shadow:0 4px 24px rgba(0,229,160,.25);z-index:100;}
 
-/* ── Modal ── */
-.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:200;align-items:flex-end;}
+/* Modals */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:200;align-items:flex-end;}
 .modal-overlay.open{display:flex;}
-.modal{background:var(--surface);border:1px solid var(--border);border-radius:24px 24px 0 0;padding:24px 18px 40px;width:100%;max-height:92vh;overflow-y:auto;}
+.modal{background:var(--surface);border:1px solid var(--border);border-radius:24px 24px 0 0;padding:24px 18px 44px;width:100%;max-height:92vh;overflow-y:auto;}
 .modal-title{font-size:16px;font-weight:500;margin-bottom:18px;}
 .form-group{margin-bottom:14px;}
 .form-label{font-size:11px;color:var(--text2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;display:block;}
@@ -135,24 +135,26 @@ canvas.price-chart{width:100%;height:100%;display:block;}
 .form-input:focus{border-color:var(--accent);}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
 .form-hint{font-size:10px;color:var(--text3);margin-top:4px;}
+.form-readonly{background:var(--bg);color:var(--text2);}
 .btn-row{display:flex;gap:10px;margin-top:18px;}
 .btn-cancel{flex:1;padding:13px;background:var(--surface2);border:1px solid var(--border);border-radius:12px;color:var(--text2);font-size:15px;cursor:pointer;}
 .btn-save{flex:2;padding:13px;background:var(--accent);border:none;border-radius:12px;color:#000;font-size:15px;font-weight:500;cursor:pointer;}
+.btn-danger{flex:2;padding:13px;background:var(--loss-dim);border:1px solid var(--loss);border-radius:12px;color:var(--loss);font-size:15px;cursor:pointer;}
 
-/* ── Empty ── */
 .empty-state{text-align:center;padding:48px 20px;color:var(--text3);font-size:13px;}
 .empty-state div:first-child{font-size:32px;margin-bottom:12px;}
 .del-btn{background:none;border:none;color:var(--text3);font-size:15px;cursor:pointer;padding:2px 6px;border-radius:6px;}
 .del-btn:active{background:var(--loss-dim);color:var(--loss);}
 .no-select{user-select:none;-webkit-user-select:none;}
+.page{display:none;}.page.active{display:block;}
 
-/* ── Spinner ── */
-.spin{display:inline-block;width:10px;height:10px;border:2px solid var(--accent);border-top-color:transparent;border-radius:50%;animation:spin .6s linear infinite;vertical-align:middle;}
-@keyframes spin{to{transform:rotate(360deg);}}
-
-/* page sections */
-.page{display:none;}
-.page.active{display:block;}
+/* chart tab */
+.chart-tab-wrap{padding:14px;}
+.chart-stock-sel{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:var(--text);font-family:var(--sans);font-size:14px;outline:none;-webkit-appearance:none;margin-bottom:12px;}
+.chart-box{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:14px;}
+.chart-box-title{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+.price-log-list .pl-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid var(--border);}
+.price-log-list .pl-row:last-child{border-bottom:none;}
 </style>
 </head>
 <body>
@@ -172,69 +174,64 @@ canvas.price-chart{width:100%;height:100%;display:block;}
   <div class="tab" onclick="showTab('chart')" id="tab-chart">图表</div>
 </div>
 
-<!-- ══ TAB: Positions ══ -->
+<!-- ══ 持仓 ══ -->
 <div class="page active" id="page-positions">
-  <div class="summary-grid">
-    <div class="sum-card">
-      <div class="sum-label" id="lbl-unrealized">持仓预想收益</div>
-      <div class="sum-amount" id="sum-unrealized">¥ 0.00</div>
-      <div class="sum-sub" id="sum-unrealized-rate">+0.00%</div>
-    </div>
-    <div class="sum-card">
-      <div class="sum-label" id="lbl-market-val">当前市值</div>
-      <div class="sum-amount zero" id="sum-market-val">¥ 0.00</div>
-      <div class="sum-sub" id="sum-invested-label">投入: ¥ 0</div>
+  <div class="top-sum">
+    <div class="top-sum-row">
+      <div class="top-sum-item">
+        <div class="tsi-label" id="lbl-unrealized">持仓预想收益</div>
+        <div class="tsi-val zero" id="sum-unrealized">— —</div>
+        <div class="tsi-sub" id="sum-unrealized-rate"></div>
+      </div>
+      <div class="top-sum-item">
+        <div class="tsi-label" id="lbl-market-val">当前总市值</div>
+        <div class="tsi-val zero" id="sum-market-val">— —</div>
+        <div class="tsi-sub" id="sum-invested-sub"></div>
+      </div>
     </div>
   </div>
-  <div class="divider-label" id="lbl-holdings">持有股票</div>
+  <div class="section-title" id="lbl-holdings">持有股票</div>
   <div class="stock-list" id="holdings-list"></div>
 </div>
 
-<!-- ══ TAB: Realized ══ -->
+<!-- ══ 已实现 ══ -->
 <div class="page" id="page-realized">
-  <div class="summary-grid">
-    <div class="sum-card full">
-      <div class="sum-label" id="lbl-realized-total">已实现累计收益</div>
-      <div class="sum-amount" id="sum-realized">¥ 0.00</div>
-      <div class="sum-sub" id="sum-realized-rate">+0.00%</div>
+  <div class="top-sum">
+    <div class="top-sum-row">
+      <div class="top-sum-item" style="border-right:none;padding:0;">
+        <div class="tsi-label" id="lbl-realized-total">已实现累计收益</div>
+        <div class="tsi-val zero" id="sum-realized">¥ 0.00</div>
+        <div class="tsi-sub" id="sum-realized-rate"></div>
+      </div>
     </div>
   </div>
-  <div class="divider-label" id="lbl-realized-stocks">已平仓股票</div>
+  <div class="section-title" id="lbl-realized-stocks">已平仓股票</div>
   <div class="stock-list" id="realized-list"></div>
 </div>
 
-<!-- ══ TAB: Chart ══ -->
+<!-- ══ 图表 ══ -->
 <div class="page" id="page-chart">
-  <div style="padding:14px 14px 0">
-    <select class="form-input" id="chart-stock-select" onchange="renderChart()"></select>
-  </div>
-  <div style="padding:14px;">
-    <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:14px;">
-      <div style="font-size:11px;color:var(--text3);margin-bottom:10px;" id="lbl-chart-title">股价走势</div>
-      <div class="chart-wrap">
-        <canvas id="price-chart"></canvas>
-        <div class="chart-empty" id="chart-empty" style="display:none">暂无价格记录</div>
+  <div class="chart-tab-wrap">
+    <select class="chart-stock-sel" id="chart-stock-select" onchange="renderChartTab()"></select>
+    <div class="chart-box">
+      <div class="chart-box-title" id="lbl-chart-title">股价走势</div>
+      <div style="height:200px;position:relative;">
+        <canvas id="main-chart" style="width:100%;height:100%;display:block;"></canvas>
+        <div id="chart-empty-main" style="display:none;position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--text3);font-size:12px;"></div>
       </div>
-      <div style="display:flex;gap:14px;margin-top:8px;flex-wrap:wrap;">
-        <div style="display:flex;align-items:center;gap:5px;font-size:10px;color:var(--text2);">
-          <div style="width:20px;height:2px;background:var(--accent)"></div><span id="legend-price">记录价格</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:5px;font-size:10px;color:var(--text2);">
-          <div style="width:20px;height:2px;background:var(--warn);border-top:2px dashed var(--warn)"></div><span id="legend-buy">买入均价</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:5px;font-size:10px;color:var(--text2);">
-          <div style="width:20px;height:2px;background:var(--loss)"></div><span id="legend-sell">实际卖出</span>
-        </div>
+      <div class="chart-legend" style="margin-top:8px;">
+        <div class="cl-item"><div class="cl-line" style="background:var(--accent)"></div><span id="legend-price">记录价格</span></div>
+        <div class="cl-item"><div class="cl-line" style="background:var(--warn);border-top:2px dashed var(--warn);height:0;margin-top:1px;"></div><span id="legend-buy">买入均价</span></div>
+        <div class="cl-item"><div class="cl-line" style="background:var(--loss)"></div><span id="legend-sell">实际卖出</span></div>
       </div>
     </div>
-    <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:14px;margin-top:10px;">
-      <div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;" id="lbl-price-history">价格记录历史</div>
-      <div id="price-history-list"></div>
+    <div class="chart-box" style="margin-top:10px;">
+      <div class="chart-box-title" id="lbl-price-history">价格记录历史</div>
+      <div class="price-log-list" id="price-history-list"></div>
     </div>
   </div>
 </div>
 
-<!-- Tools -->
 <div class="tools-row">
   <button class="tool-btn" onclick="exportData()" id="btn-export">📤 导出</button>
   <button class="tool-btn" onclick="document.getElementById('import-file').click()" id="btn-import">📥 导入</button>
@@ -242,12 +239,12 @@ canvas.price-chart{width:100%;height:100%;display:block;}
   <button class="tool-btn" onclick="clearAll()" id="btn-clear">🗑 清空</button>
 </div>
 
-<button class="fab" onclick="openModal()" id="fab-btn">＋ 添加交易</button>
+<button class="fab" onclick="openBuyModal()" id="fab-btn">＋ 买入</button>
 
-<!-- ══ Modal ══ -->
-<div class="modal-overlay" id="modal" onclick="handleOverlayClick(event)">
+<!-- ══ 买入 Modal ══ -->
+<div class="modal-overlay" id="buy-modal" onclick="if(event.target===this)closeBuyModal()">
   <div class="modal no-select">
-    <div class="modal-title" id="modal-title">录入交易</div>
+    <div class="modal-title" id="modal-buy-title">登记买入</div>
     <div class="form-group">
       <label class="form-label" id="lbl-code-name">股票代码 / 名称</label>
       <div class="form-row">
@@ -259,7 +256,7 @@ canvas.price-chart{width:100%;height:100%;display:block;}
       </div>
     </div>
     <div class="form-group">
-      <label class="form-label" id="lbl-date">交易日期</label>
+      <label class="form-label" id="lbl-date">买入日期</label>
       <input class="form-input" id="f-date" type="date">
     </div>
     <div class="form-group">
@@ -276,10 +273,6 @@ canvas.price-chart{width:100%;height:100%;display:block;}
       </div>
     </div>
     <div class="form-group">
-      <label class="form-label" id="lbl-sell-price">卖出价格（留空 = 持有中）</label>
-      <input class="form-input" id="f-sell-price" inputmode="decimal">
-    </div>
-    <div class="form-group">
       <label class="form-label" id="lbl-fee">手续费（可选）</label>
       <input class="form-input" id="f-fee" inputmode="decimal">
     </div>
@@ -288,8 +281,68 @@ canvas.price-chart{width:100%;height:100%;display:block;}
       <input class="form-input" id="f-note">
     </div>
     <div class="btn-row">
-      <button class="btn-cancel" onclick="closeModal()" id="btn-cancel">取消</button>
-      <button class="btn-save" onclick="saveTrade()" id="btn-save">保存</button>
+      <button class="btn-cancel" onclick="closeBuyModal()" id="btn-cancel">取消</button>
+      <button class="btn-save" onclick="saveBuy()" id="btn-save">保存</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 卖出 Modal ══ -->
+<div class="modal-overlay" id="sell-modal" onclick="if(event.target===this)closeSellModal()">
+  <div class="modal no-select">
+    <div class="modal-title" id="modal-sell-title">登记卖出</div>
+    <!-- readonly info -->
+    <div class="form-group">
+      <label class="form-label" id="lbl-sell-stock">股票</label>
+      <div class="form-row">
+        <input class="form-input form-readonly" id="s-code" readonly>
+        <input class="form-input form-readonly" id="s-name" readonly>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label" id="lbl-sell-buy-info">买入记录</label>
+      <div class="form-row">
+        <div>
+          <input class="form-input form-readonly" id="s-buy-price" readonly>
+          <div class="form-hint" id="hint-s-buy-price">买入价</div>
+        </div>
+        <div>
+          <input class="form-input form-readonly" id="s-shares" readonly>
+          <div class="form-hint" id="hint-s-shares">股数</div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label" id="lbl-sell-date">卖出日期</label>
+      <input class="form-input" id="s-date" type="date">
+    </div>
+    <div class="form-group">
+      <label class="form-label" id="lbl-sell-price">卖出价格（元 / 股）</label>
+      <input class="form-input" id="s-sell-price" inputmode="decimal">
+    </div>
+    <div class="form-group">
+      <label class="form-label" id="lbl-sell-fee">手续费（可选）</label>
+      <input class="form-input" id="s-fee" inputmode="decimal">
+    </div>
+    <div class="form-group">
+      <label class="form-label" id="lbl-sell-note">备注</label>
+      <input class="form-input" id="s-note">
+    </div>
+    <div class="btn-row">
+      <button class="btn-cancel" onclick="closeSellModal()" id="btn-sell-cancel">取消</button>
+      <button class="btn-save" onclick="saveSell()" id="btn-sell-save">确认卖出</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 批次详情 Modal ══ -->
+<div class="modal-overlay" id="lot-modal" onclick="if(event.target===this)closeLotModal()">
+  <div class="modal no-select">
+    <div class="modal-title" id="lot-modal-title">批次详情</div>
+    <div id="lot-modal-body"></div>
+    <div class="btn-row" style="margin-top:14px;">
+      <button class="btn-cancel" onclick="closeLotModal()">关闭</button>
+      <button class="btn-danger" id="lot-delete-btn">删除记录</button>
     </div>
   </div>
 </div>
@@ -298,418 +351,330 @@ canvas.price-chart{width:100%;height:100%;display:block;}
 // ══════════════════════════════════════════════
 //  i18n
 // ══════════════════════════════════════════════
-const I18N = {
+const I18N={
   zh:{
-    appTitle:'股票收益记录',unrealized:'持仓预想收益',marketVal:'当前市值',
-    invested:'投入',holdings:'持有股票',realizedTotal:'已实现累计收益',
-    realizedStocks:'已平仓股票',chartTitle:'股价走势',priceHistory:'价格记录历史',
+    appTitle:'股票收益记录',
+    unrealized:'持仓预想收益',marketVal:'当前总市值',invested:'累计投入',
+    holdings:'持有股票',realizedTotal:'已实现累计收益',realizedStocks:'已平仓股票',
+    chartTitle:'股价走势',priceHistory:'价格记录历史',noPrice:'暂无价格记录',
     tabPositions:'持仓',tabRealized:'已实现',tabChart:'图表',
-    export:'📤 导出',import:'📥 导入',clear:'🗑 清空',fab:'＋ 添加交易',
-    modalTitle:'录入交易',codeName:'股票代码 / 名称',hintCode:'如: 600519.SS / AAPL / 7203.T',
-    date:'交易日期',buyInfo:'买入信息',hintBuyPrice:'元 / 股',hintShares:'股',
-    sellPrice:'卖出价格（留空 = 持有中）',fee:'手续费（可选）',note:'备注',
-    cancel:'取消',save:'保存',
-    codePh:'600519.SS',namePh:'贵州茅台',buyPricePh:'买入价格',sharesPh:'股数',
-    sellPricePh:'卖出价格',feePh:'总手续费',notePh:'可选备注',
-    fetchBtn:'自动获取',setBtn:'更新',
-    badgeAuto:'自动',badgeManual:'手动',badgeNone:'无价格',
-    holdingTrades:'持有批次',realizedTrades:'已平仓批次',
-    unrealizedProfit:'预想收益',realizedProfit:'已实现收益',
-    buyWord:'买',sellWord:'→卖',feeWord:'费',holdingWord:'持有中',
-    priceUpdated:'价格已更新',fetchFail:'自动获取失败，请手动输入',
+    export:'📤 导出',import:'📥 导入',clear:'🗑 清空',fab:'＋ 买入',
+    modalBuyTitle:'登记买入',modalSellTitle:'登记卖出',
+    codeName:'股票代码 / 名称',hintCode:'如: 600519.SS / AAPL / 7203.T',
+    date:'买入日期',buyInfo:'买入信息',hintBuyPrice:'元 / 股',hintShares:'股',
+    fee:'手续费（可选）',note:'备注',cancel:'取消',save:'保存',
+    sellStock:'股票',sellBuyInfo:'买入记录',sellDate:'卖出日期',
+    sellPrice:'卖出价格（元 / 股）',sellFee:'手续费（可选）',sellNote:'备注',
+    sellCancel:'取消',sellSave:'确认卖出',
+    codePh:'600519.SS',namePh:'贵州茅台',buyPricePh:'买入价格',sharesPh:'股数',feePh:'总手续费',notePh:'备注',
+    sellBtn:'登记卖出',
+    currentPriceLbl:'手动填入当前市值',currentPriceBtn:'更新',
+    unrealizedLbl:'预想收益',marketValLbl:'当前市值',investedLbl:'投入成本',
+    holdingLots:'持有批次',soldLots:'已平仓批次',
+    buyWord:'买入',sellWord:'卖出',feeWord:'手续费',
     legendPrice:'记录价格',legendBuy:'买入均价',legendSell:'实际卖出',
-    noPrice:'暂无价格记录',emptyHoldings:'暂无持仓，点击 ＋ 添加',emptyRealized:'暂无已平仓记录',
+    emptyHoldings:'暂无持仓，点击 ＋ 买入 添加',emptyRealized:'暂无已平仓记录',
     alertRequired:'请填写股票代码/名称、日期、买入价格和股数',
-    confirmDelete:'删除这笔交易？',confirmImport:'条记录？将与现有数据合并。',
+    alertSellRequired:'请填写卖出日期和卖出价格',
+    confirmDelete:'删除这条记录？',confirmImport:'条记录？将与现有数据合并。',
     confirmClear:'清空所有记录？不可撤销。',jsonError:'JSON格式错误',
-    locale:'zh-CN',currency:'¥',
+    deletePriceLog:'删除该价格记录？',
+    locale:'zh-CN',currency:'¥',perShare:'元/股',shares:'股',
+    dash:'—',
   },
   en:{
-    appTitle:'Stock P&L Tracker',unrealized:'Unrealized P&L',marketVal:'Market Value',
-    invested:'Invested',holdings:'Open Positions',realizedTotal:'Total Realized P&L',
-    realizedStocks:'Closed Positions',chartTitle:'Price History',priceHistory:'Price Log',
+    appTitle:'Stock P&L Tracker',
+    unrealized:'Unrealized P&L',marketVal:'Market Value',invested:'Invested',
+    holdings:'Open Positions',realizedTotal:'Total Realized P&L',realizedStocks:'Closed Positions',
+    chartTitle:'Price History',priceHistory:'Price Log',noPrice:'No price records yet',
     tabPositions:'Positions',tabRealized:'Realized',tabChart:'Chart',
-    export:'📤 Export',import:'📥 Import',clear:'🗑 Clear',fab:'＋ Add Trade',
-    modalTitle:'Add Trade',codeName:'Ticker / Name',hintCode:'e.g. AAPL / 600519.SS / 7203.T',
-    date:'Trade Date',buyInfo:'Buy Info',hintBuyPrice:'per share',hintShares:'shares',
-    sellPrice:'Sell Price (blank = holding)',fee:'Commission (optional)',note:'Note',
-    cancel:'Cancel',save:'Save',
-    codePh:'AAPL',namePh:'Apple Inc.',buyPricePh:'Buy Price',sharesPh:'Shares',
-    sellPricePh:'Sell Price',feePh:'Total fee',notePh:'Optional note',
-    fetchBtn:'Auto-fetch',setBtn:'Update',
-    badgeAuto:'auto',badgeManual:'manual',badgeNone:'no price',
-    holdingTrades:'Open lots',realizedTrades:'Closed lots',
-    unrealizedProfit:'Unrealized',realizedProfit:'Realized',
-    buyWord:'Buy',sellWord:'→Sell',feeWord:'Fee',holdingWord:'Holding',
-    priceUpdated:'Price updated',fetchFail:'Auto-fetch failed, please enter manually',
-    legendPrice:'Recorded price',legendBuy:'Avg buy price',legendSell:'Actual sell',
-    noPrice:'No price records yet',emptyHoldings:'No positions yet. Tap ＋ to add.',emptyRealized:'No closed positions yet.',
+    export:'📤 Export',import:'📥 Import',clear:'🗑 Clear',fab:'＋ Buy',
+    modalBuyTitle:'Log Buy',modalSellTitle:'Log Sell',
+    codeName:'Ticker / Name',hintCode:'e.g. AAPL / 600519.SS / 7203.T',
+    date:'Buy Date',buyInfo:'Buy Info',hintBuyPrice:'per share',hintShares:'shares',
+    fee:'Commission (optional)',note:'Note',cancel:'Cancel',save:'Save',
+    sellStock:'Stock',sellBuyInfo:'Buy Record',sellDate:'Sell Date',
+    sellPrice:'Sell Price (per share)',sellFee:'Commission (optional)',sellNote:'Note',
+    sellCancel:'Cancel',sellSave:'Confirm Sell',
+    codePh:'AAPL',namePh:'Apple Inc.',buyPricePh:'Buy Price',sharesPh:'Shares',feePh:'Total fee',notePh:'Note',
+    sellBtn:'Log Sell',
+    currentPriceLbl:'Enter current price manually',currentPriceBtn:'Update',
+    unrealizedLbl:'Unrealized',marketValLbl:'Mkt Value',investedLbl:'Cost',
+    holdingLots:'Open Lots',soldLots:'Closed Lots',
+    buyWord:'Buy',sellWord:'Sell',feeWord:'Fee',
+    legendPrice:'Recorded price',legendBuy:'Avg buy',legendSell:'Actual sell',
+    emptyHoldings:'No positions. Tap ＋ Buy to add.',emptyRealized:'No closed positions yet.',
     alertRequired:'Please fill in ticker/name, date, buy price, and shares.',
-    confirmDelete:'Delete this trade?',confirmImport:'records? They will be merged.',
-    confirmClear:'Clear all records? This cannot be undone.',jsonError:'Invalid JSON format.',
-    locale:'en-US',currency:'$',
+    alertSellRequired:'Please fill in sell date and sell price.',
+    confirmDelete:'Delete this record?',confirmImport:'records? They will be merged.',
+    confirmClear:'Clear all records? Cannot be undone.',jsonError:'Invalid JSON.',
+    deletePriceLog:'Delete this price record?',
+    locale:'en-US',currency:'$',perShare:'$/sh',shares:'sh',
+    dash:'—',
   },
   ja:{
-    appTitle:'株式損益記録',unrealized:'含み損益',marketVal:'時価評価額',
-    invested:'投資額',holdings:'保有銘柄',realizedTotal:'累計実現損益',
-    realizedStocks:'決済済み銘柄',chartTitle:'株価推移',priceHistory:'価格記録履歴',
+    appTitle:'株式損益記録',
+    unrealized:'含み損益',marketVal:'時価評価額',invested:'取得コスト',
+    holdings:'保有銘柄',realizedTotal:'累計実現損益',realizedStocks:'決済済み銘柄',
+    chartTitle:'株価推移',priceHistory:'価格記録',noPrice:'価格記録なし',
     tabPositions:'保有',tabRealized:'実現損益',tabChart:'チャート',
-    export:'📤 エクスポート',import:'📥 インポート',clear:'🗑 クリア',fab:'＋ 取引追加',
-    modalTitle:'取引入力',codeName:'銘柄コード / 名称',hintCode:'例: 7203.T / AAPL / 600519.SS',
-    date:'取引日',buyInfo:'買付情報',hintBuyPrice:'円 / 株',hintShares:'株',
-    sellPrice:'売却価格（空欄 = 保有中）',fee:'手数料（任意）',note:'メモ',
-    cancel:'キャンセル',save:'保存',
-    codePh:'7203.T',namePh:'トヨタ自動車',buyPricePh:'買付価格',sharesPh:'株数',
-    sellPricePh:'売却価格',feePh:'合計手数料',notePh:'任意メモ',
-    fetchBtn:'自動取得',setBtn:'更新',
-    badgeAuto:'自動',badgeManual:'手動',badgeNone:'価格なし',
-    holdingTrades:'保有ロット',realizedTrades:'決済済みロット',
-    unrealizedProfit:'含み損益',realizedProfit:'実現損益',
-    buyWord:'買',sellWord:'→売',feeWord:'手数料',holdingWord:'保有中',
-    priceUpdated:'価格更新済み',fetchFail:'自動取得失敗。手動入力してください',
+    export:'📤 エクスポート',import:'📥 インポート',clear:'🗑 クリア',fab:'＋ 買付',
+    modalBuyTitle:'買付登録',modalSellTitle:'売却登録',
+    codeName:'銘柄コード / 名称',hintCode:'例: 7203.T / AAPL / 600519.SS',
+    date:'買付日',buyInfo:'買付情報',hintBuyPrice:'円 / 株',hintShares:'株',
+    fee:'手数料（任意）',note:'メモ',cancel:'キャンセル',save:'保存',
+    sellStock:'銘柄',sellBuyInfo:'買付記録',sellDate:'売却日',
+    sellPrice:'売却価格（円 / 株）',sellFee:'手数料（任意）',sellNote:'メモ',
+    sellCancel:'キャンセル',sellSave:'売却確定',
+    codePh:'7203.T',namePh:'トヨタ自動車',buyPricePh:'買付価格',sharesPh:'株数',feePh:'合計手数料',notePh:'メモ',
+    sellBtn:'売却登録',
+    currentPriceLbl:'現在株価を手動入力',currentPriceBtn:'更新',
+    unrealizedLbl:'含み損益',marketValLbl:'時価',investedLbl:'取得額',
+    holdingLots:'保有ロット',soldLots:'決済済みロット',
+    buyWord:'買',sellWord:'売',feeWord:'手数料',
     legendPrice:'記録価格',legendBuy:'買付平均',legendSell:'実際売却',
-    noPrice:'価格記録なし',emptyHoldings:'保有なし。＋ で追加',emptyRealized:'決済済みなし',
+    emptyHoldings:'保有なし。＋ 買付 で追加',emptyRealized:'決済済みなし',
     alertRequired:'銘柄コード/名称、日付、買付価格、株数を入力してください。',
-    confirmDelete:'この取引を削除しますか？',confirmImport:'件をインポートしますか？既存に追加されます。',
+    alertSellRequired:'売却日と売却価格を入力してください。',
+    confirmDelete:'この記録を削除しますか？',confirmImport:'件をインポートしますか？既存に追加されます。',
     confirmClear:'全記録を削除しますか？元に戻せません。',jsonError:'JSONフォーマットエラー',
-    locale:'ja-JP',currency:'¥',
+    deletePriceLog:'この価格記録を削除しますか？',
+    locale:'ja-JP',currency:'¥',perShare:'円/株',shares:'株',
+    dash:'—',
   }
 };
 
-let lang = localStorage.getItem('stock_lang') || 'zh';
-// trades: [{code,name,date,buyPrice,shares,sellPrice?,fee?,note?}]
-let trades = JSON.parse(localStorage.getItem('stock_trades') || '[]');
-// priceLog: {code: [{date,price,source:'auto'|'manual'}]}
-let priceLog = JSON.parse(localStorage.getItem('stock_price_log') || '{}');
-// currentPrices: {code: {price, source, updatedAt}}
-let currentPrices = JSON.parse(localStorage.getItem('stock_current_prices') || '{}');
-
+let lang = localStorage.getItem('stock_lang')||'zh';
+let trades = JSON.parse(localStorage.getItem('stock_trades')||'[]');
+let priceLog = JSON.parse(localStorage.getItem('stock_price_log')||'{}');
+let currentPrices = JSON.parse(localStorage.getItem('stock_current_prices')||'{}');
 let currentTab = 'positions';
 const expandedCards = new Set();
 
-function t(k){ return I18N[lang][k] || k; }
+function t(k){ return I18N[lang][k]||k; }
 function saveAll(){
-  localStorage.setItem('stock_trades', JSON.stringify(trades));
-  localStorage.setItem('stock_price_log', JSON.stringify(priceLog));
-  localStorage.setItem('stock_current_prices', JSON.stringify(currentPrices));
+  localStorage.setItem('stock_trades',JSON.stringify(trades));
+  localStorage.setItem('stock_price_log',JSON.stringify(priceLog));
+  localStorage.setItem('stock_current_prices',JSON.stringify(currentPrices));
 }
 
 // ── Format ──
-function fmt(n, cur){
-  cur = cur || t('currency');
-  const abs = Math.abs(n).toLocaleString(t('locale'),{minimumFractionDigits:2,maximumFractionDigits:2});
-  return (n>=0?'+':'-')+cur+' '+abs;
+function cur(){ return t('currency'); }
+function fmt(n){
+  const abs=Math.abs(n).toLocaleString(t('locale'),{minimumFractionDigits:2,maximumFractionDigits:2});
+  return (n>=0?'+':'-')+cur()+' '+abs;
 }
-function fmtP(n, cur){
-  cur = cur || t('currency');
-  return cur+' '+Math.abs(n).toLocaleString(t('locale'),{minimumFractionDigits:2,maximumFractionDigits:2});
+function fmtP(n){
+  return cur()+' '+Math.abs(n).toLocaleString(t('locale'),{minimumFractionDigits:2,maximumFractionDigits:2});
 }
 function fmtRate(r){ return (r>=0?'+':'')+r.toFixed(2)+'%'; }
 function cls(n){ return n>0?'pos':n<0?'neg':'zero'; }
 
 // ── Groups ──
 function getGroups(){
-  const groups={};
+  const g={};
   trades.forEach((tr,i)=>{
-    const key = (tr.code||tr.name||'').toUpperCase().trim();
+    const key=(tr.code||tr.name||'').toUpperCase().trim();
     if(!key) return;
-    if(!groups[key]) groups[key]={code:tr.code,name:tr.name,key,holdings:[],closed:[]};
+    if(!g[key]) g[key]={code:tr.code,name:tr.name,key,holdings:[],closed:[]};
     const obj={...tr,_idx:i};
-    // explicit null/undefined check — 0 or "" should not be treated as "sold"
-    if(tr.sellPrice != null && tr.sellPrice !== '' && Number(tr.sellPrice) > 0){
-      obj.sellPrice = Number(tr.sellPrice);
-      groups[key].closed.push(obj);
+    if(tr.sellPrice!=null && tr.sellPrice!=='' && Number(tr.sellPrice)>0){
+      obj.sellPrice=Number(tr.sellPrice); g[key].closed.push(obj);
     } else {
-      obj.sellPrice = null;
-      groups[key].holdings.push(obj);
+      obj.sellPrice=null; g[key].holdings.push(obj);
     }
   });
-  return groups;
+  return g;
 }
 
 // ── Tab ──
 function showTab(tab){
-  currentTab = tab;
+  currentTab=tab;
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(tb=>tb.classList.remove('active'));
   document.getElementById('page-'+tab).classList.add('active');
   document.getElementById('tab-'+tab).classList.add('active');
-  if(tab==='chart') renderChart();
+  if(tab==='chart') renderChartTab();
 }
 
 // ══════════════════════════════════════════════
-//  Auto price fetch  (Yahoo Finance via allorigins proxy)
-// ══════════════════════════════════════════════
-async function fetchPrice(ticker){
-  // Yahoo Finance query1 endpoint via CORS proxy
-  const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(ticker)}?interval=1d&range=1d`;
-  const proxy = `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`;
-  const resp = await fetch(proxy, {signal: AbortSignal.timeout(8000)});
-  const json = await resp.json();
-  const data = JSON.parse(json.contents);
-  const result = data?.chart?.result?.[0];
-  const meta = result?.meta;
-  const price = meta?.regularMarketPrice || meta?.previousClose;
-  if(!price) throw new Error('no price');
-  return price;
-}
-
-async function autoFetchAndUpdate(key, inputId, statusId){
-  const groups = getGroups();
-  const g = groups[key];
-  if(!g) return;
-  const ticker = g.code;
-  if(!ticker){ showStatus(statusId, t('fetchFail'), true); return; }
-  showStatus(statusId, '<span class="spin"></span>', false);
-  try{
-    const price = await fetchPrice(ticker);
-    document.getElementById(inputId).value = price.toFixed(2);
-    setCurrentPrice(key, price, 'auto');
-    showStatus(statusId, t('priceUpdated'), false);
-  } catch(e){
-    showStatus(statusId, t('fetchFail'), true);
-  }
-}
-
-function showStatus(id, msg, isErr){
-  const el = document.getElementById(id);
-  if(!el) return;
-  el.innerHTML = msg;
-  el.style.color = isErr ? 'var(--loss)' : 'var(--accent)';
-  if(!isErr && msg===t('priceUpdated')) setTimeout(()=>{ el.innerHTML=''; }, 2500);
-}
-
-function setCurrentPrice(key, price, source){
-  currentPrices[key] = {price, source, updatedAt: new Date().toISOString()};
-  // log it
-  const today = new Date().toISOString().slice(0,10);
-  if(!priceLog[key]) priceLog[key]=[];
-  // avoid duplicate same-day entries (overwrite)
-  const idx = priceLog[key].findIndex(p=>p.date===today);
-  if(idx>=0) priceLog[key][idx] = {date:today,price,source};
-  else priceLog[key].push({date:today,price,source});
-  priceLog[key].sort((a,b)=>a.date.localeCompare(b.date));
-  saveAll();
-  renderAll();
-}
-
-function manualSetPrice(key, inputId){
-  const val = parseFloat(document.getElementById(inputId).value);
-  if(isNaN(val)||val<=0){ alert('请输入有效价格'); return; }
-  setCurrentPrice(key, val, 'manual');
-}
-
-// ══════════════════════════════════════════════
-//  Render
+//  Render All
 // ══════════════════════════════════════════════
 function renderAll(){
   renderPositions();
   renderRealized();
   updateChartSelect();
-  if(currentTab==='chart') renderChart();
+  if(currentTab==='chart') renderChartTab();
 }
 
+// ══════════════════════════════════════════════
+//  Positions Tab
+// ══════════════════════════════════════════════
 function renderPositions(){
-  const groups = getGroups();
-  let totalUnrealized=0, totalInvested=0, totalMarketVal=0;
+  const groups=getGroups();
+  const holdGroups=Object.values(groups).filter(g=>g.holdings.length>0);
 
-  const holdingGroups = Object.values(groups).filter(g=>g.holdings.length>0);
-
-  holdingGroups.forEach(g=>{
-    const cp = currentPrices[g.key];
+  // top summary
+  let totalUnrealized=0,totalInvested=0,totalMV=0,hasPrice=false;
+  holdGroups.forEach(g=>{
+    const cp=currentPrices[g.key];
     g.holdings.forEach(tr=>{
-      const cost = tr.buyPrice*tr.shares+(tr.fee||0);
-      totalInvested += cost;
-      if(cp){
-        const mv = cp.price*tr.shares;
-        totalMarketVal += mv;
-        totalUnrealized += mv - cost;
-      }
+      const cost=tr.buyPrice*tr.shares+(tr.fee||0);
+      totalInvested+=cost;
+      if(cp){ totalMV+=cp.price*tr.shares; totalUnrealized+=cp.price*tr.shares-cost; hasPrice=true; }
     });
   });
 
-  const unrEl = document.getElementById('sum-unrealized');
-  unrEl.textContent = fmt(totalUnrealized);
-  unrEl.className = 'sum-amount '+(totalInvested>0?cls(totalUnrealized):'zero');
-  const unrRate = totalInvested>0?(totalUnrealized/totalInvested*100):0;
-  const unrRateEl = document.getElementById('sum-unrealized-rate');
-  unrRateEl.textContent = fmtRate(unrRate);
-  unrRateEl.className = 'sum-sub '+cls(unrRate);
-  document.getElementById('sum-market-val').textContent = fmtP(totalMarketVal);
-  document.getElementById('sum-invested-label').textContent = t('invested')+': '+fmtP(totalInvested);
+  const unrEl=document.getElementById('sum-unrealized');
+  const unrRateEl=document.getElementById('sum-unrealized-rate');
+  const mvEl=document.getElementById('sum-market-val');
+  if(hasPrice){
+    unrEl.textContent=fmt(totalUnrealized);
+    unrEl.className='tsi-val '+cls(totalUnrealized);
+    const rate=totalInvested>0?(totalUnrealized/totalInvested*100):0;
+    unrRateEl.textContent=fmtRate(rate);
+    unrRateEl.className='tsi-sub '+cls(rate);
+    mvEl.textContent=fmtP(totalMV);
+    mvEl.className='tsi-val';
+  } else {
+    unrEl.textContent=t('dash'); unrEl.className='tsi-val zero';
+    unrRateEl.textContent=''; mvEl.textContent=t('dash'); mvEl.className='tsi-val zero';
+  }
+  document.getElementById('sum-invested-sub').textContent=t('invested')+': '+fmtP(totalInvested);
 
-  const list = document.getElementById('holdings-list');
-  if(holdingGroups.length===0){
+  const list=document.getElementById('holdings-list');
+  if(holdGroups.length===0){
     list.innerHTML=`<div class="empty-state"><div>📈</div>${t('emptyHoldings')}</div>`;
     return;
   }
   list.innerHTML='';
-  holdingGroups.forEach(g=>{
-    const cp = currentPrices[g.key];
-    let gUnrealized=0, gInvested=0, gMV=0;
-    let avgBuy=0, totalShares=0;
+  holdGroups.forEach(g=>{ list.appendChild(buildHoldingCard(g)); });
+}
+
+function buildHoldingCard(g){
+  const cp=currentPrices[g.key];
+  const isOpen=expandedCards.has(g.key);
+
+  // per-card stats
+  let gInvested=0,gMV=0,gUnrealized=0,totalShares=0,weightedBuy=0;
+  g.holdings.forEach(tr=>{
+    const cost=tr.buyPrice*tr.shares+(tr.fee||0);
+    gInvested+=cost; totalShares+=tr.shares; weightedBuy+=tr.buyPrice*tr.shares;
+    if(cp){ gMV+=cp.price*tr.shares; gUnrealized+=cp.price*tr.shares-cost; }
+  });
+  const avgBuy=totalShares>0?weightedBuy/totalShares:0;
+  const gRate=gInvested>0?(gUnrealized/gInvested*100):0;
+
+  // also show realized total for this stock in header
+  let gRealized=0;
+  g.closed.forEach(tr=>{ gRealized+=(tr.sellPrice-tr.buyPrice)*tr.shares-(tr.fee||0); });
+
+  const card=document.createElement('div');
+  card.className='stock-card';
+
+  // ── header ──
+  const mvText = cp ? fmtP(gMV) : t('dash');
+  const unrText = cp ? fmt(gUnrealized) : t('dash');
+  const unrCls = cp ? cls(gUnrealized) : 'zero';
+  const rateTxt = cp ? fmtRate(gRate) : t('dash');
+  const rateCls = cp ? cls(gRate) : 'zero';
+
+  let html=`
+  <div class="card-summary" onclick="toggleCard('${g.key}')">
+    <div class="cs-left">
+      <div class="cs-code">${g.code||'—'}</div>
+      <div class="cs-name">${g.name||'—'}</div>
+    </div>
+    <div class="cs-right">
+      <div class="cs-total ${unrCls}">${unrText}</div>
+      <div class="cs-rate ${rateCls}">${rateTxt}</div>
+      <div class="cs-chevron">${isOpen?'▲':'▼'}</div>
+    </div>
+  </div>
+  <div class="card-stats">
+    <div class="cstat">
+      <div class="cstat-label">${t('marketValLbl')}</div>
+      <div class="cstat-val ${cp?'':''}">${mvText}</div>
+    </div>
+    <div class="cstat">
+      <div class="cstat-label">${t('investedLbl')}</div>
+      <div class="cstat-val">${fmtP(gInvested)}</div>
+    </div>
+    <div class="cstat">
+      <div class="cstat-label">${t('shares')}</div>
+      <div class="cstat-val">${totalShares}</div>
+    </div>
+  </div>`;
+
+  // ── price input ──
+  const inputId='pi-'+g.key;
+  html+=`
+  <div class="price-row">
+    <input class="price-small-input" id="${inputId}" inputmode="decimal" placeholder="${t('currentPriceLbl')}">
+    <button class="btn-set-price" onclick="manualSetPrice('${g.key}','${inputId}')">${t('currentPriceBtn')}</button>
+  </div>`;
+
+  // ── expanded detail ──
+  if(isOpen){
+    html+=`<div class="card-detail"><div class="detail-inner">`;
+
+    // mini chart inside card
+    const log=(priceLog[g.key]||[]).slice().sort((a,b)=>a.date.localeCompare(b.date));
+    if(log.length>0){
+      const cid='cc-'+g.key;
+      html+=`<div class="detail-title">${t('chartTitle')}</div>
+      <div class="card-chart-wrap"><canvas id="${cid}"></canvas></div>`;
+    }
+
+    // holding lots
+    html+=`<div class="detail-title">${t('holdingLots')}</div>`;
     g.holdings.forEach(tr=>{
       const cost=tr.buyPrice*tr.shares+(tr.fee||0);
-      gInvested+=cost;
-      totalShares+=tr.shares;
-      avgBuy+=tr.buyPrice*tr.shares;
-      if(cp){ gMV+=cp.price*tr.shares; gUnrealized+=cp.price*tr.shares-cost; }
-    });
-    avgBuy = totalShares>0?avgBuy/totalShares:0;
-    const gRate = gInvested>0?(gUnrealized/gInvested*100):0;
-
-    // realized for this stock
-    let gRealized=0;
-    (g.closed||[]).forEach(tr=>{
-      gRealized+=(tr.sellPrice-tr.buyPrice)*tr.shares-(tr.fee||0);
-    });
-
-    const badge = cp
-      ? (cp.source==='auto'
-          ?`<span class="sc-price-badge badge-auto">${t('badgeAuto')}</span>`
-          :`<span class="sc-price-badge badge-manual">${t('badgeManual')}</span>`)
-      : `<span class="sc-price-badge badge-none">${t('badgeNone')}</span>`;
-
-    const priceText = cp ? fmtP(cp.price) : '—';
-    const inputId = 'pi-'+g.key;
-    const statusId = 'ps-'+g.key;
-    const isOpen = expandedCards.has(g.key);
-
-    const card = document.createElement('div');
-    card.className='stock-card';
-    card.innerHTML=`
-      <div class="stock-card-header" onclick="toggleCard('${g.key}')">
-        <div class="sc-left">
-          <div class="sc-code">${g.code||'—'}</div>
-          <div class="sc-name">${g.name||'—'}</div>
-          <div class="sc-price-row">
-            <span class="sc-cur-price">${priceText}</span>${badge}
-          </div>
-        </div>
-        <div class="sc-right">
-          <div class="sc-unrealized ${cp?cls(gUnrealized):'zero'}">${cp?fmt(gUnrealized):'—'}</div>
-          <div class="sc-rate ${cp?cls(gRate):'zero'}">${cp?fmtRate(gRate):'—'}</div>
-          ${gRealized!==0?`<div class="sc-realized-row">${t('realizedProfit')}: <span class="sc-realized-val ${cls(gRealized)}">${fmt(gRealized)}</span></div>`:''}
-        </div>
-      </div>
-      <div class="price-update-row">
-        <div class="price-input-wrap">
-          <input class="price-small-input" id="${inputId}" inputmode="decimal" placeholder="${t('buyPricePh')}">
-        </div>
-        <button class="btn-fetch" onclick="autoFetchAndUpdate('${g.key}','${inputId}','${statusId}')">${t('fetchBtn')}</button>
-        <button class="btn-set-price" onclick="manualSetPrice('${g.key}','${inputId}')">${t('setBtn')}</button>
-      </div>
-      <div class="fetch-status" style="padding:0 14px 6px;min-height:18px" id="${statusId}"></div>
-      ${isOpen?renderHoldingDetail(g, cp, avgBuy):''}
-    `;
-    list.appendChild(card);
-  });
-}
-
-function renderHoldingDetail(g, cp, avgBuy){
-  const cur = t('currency');
-  let html = `<div class="stock-detail">`;
-  html += `<div class="detail-section-title">${t('holdingTrades')}</div>`;
-  g.holdings.forEach(tr=>{
-    const cost = tr.buyPrice*tr.shares+(tr.fee||0);
-    const p = cp?(cp.price-tr.buyPrice)*tr.shares-(tr.fee||0):null;
-    const r = p!==null&&cost>0?(p/cost*100):null;
-    html+=`<div class="holding-row">
-      <div class="hr-left">
-        <div class="hr-date">${tr.date}</div>
-        <div class="hr-detail">${t('buyWord')} ${cur}${tr.buyPrice} × ${tr.shares}${t('hintShares')}${tr.fee?` ｜${t('feeWord')} ${cur}${tr.fee}`:''}${tr.note?` ｜${tr.note}`:''}</div>
-      </div>
-      <div class="hr-right">
-        <div class="hr-profit ${p!==null?cls(p):''}">${p!==null?fmt(p):'—'}</div>
-        ${r!==null?`<div class="hr-rate">${fmtRate(r)}</div>`:''}
-        <button class="del-btn" onclick="deleteTrade(${tr._idx},event)">×</button>
-      </div>
-    </div>`;
-  });
-  html += '</div>';
-  return html;
-}
-
-function renderRealized(){
-  const groups = getGroups();
-  let totalRealized=0, totalRealizedCost=0;
-  const closedGroups = Object.values(groups).filter(g=>g.closed.length>0);
-
-  closedGroups.forEach(g=>{
-    g.closed.forEach(tr=>{
-      totalRealizedCost += tr.buyPrice*tr.shares+(tr.fee||0);
-      totalRealized += (tr.sellPrice-tr.buyPrice)*tr.shares-(tr.fee||0);
-    });
-  });
-
-  const relEl = document.getElementById('sum-realized');
-  relEl.textContent = fmt(totalRealized);
-  relEl.className = 'sum-amount '+cls(totalRealized);
-  const relRate = totalRealizedCost>0?(totalRealized/totalRealizedCost*100):0;
-  const relRateEl = document.getElementById('sum-realized-rate');
-  relRateEl.textContent = fmtRate(relRate);
-  relRateEl.className = 'sum-sub '+cls(relRate);
-
-  const list = document.getElementById('realized-list');
-  if(closedGroups.length===0){
-    list.innerHTML=`<div class="empty-state"><div>💰</div>${t('emptyRealized')}</div>`;
-    return;
-  }
-  list.innerHTML='';
-  closedGroups.forEach(g=>{
-    let gRealized=0, gCost=0;
-    g.closed.forEach(tr=>{
-      gCost+=tr.buyPrice*tr.shares+(tr.fee||0);
-      gRealized+=(tr.sellPrice-tr.buyPrice)*tr.shares-(tr.fee||0);
-    });
-    const gRate = gCost>0?(gRealized/gCost*100):0;
-    const cur = t('currency');
-    const isOpen = expandedCards.has('r-'+g.key);
-
-    const card = document.createElement('div');
-    card.className='stock-card';
-    card.innerHTML=`
-      <div class="stock-card-header" onclick="toggleCard('r-${g.key}')">
-        <div class="sc-left">
-          <div class="sc-code">${g.code||'—'}</div>
-          <div class="sc-name">${g.name||'—'}</div>
-          <div class="sc-name" style="margin-top:4px">${g.closed.length} ${t('hintShares').includes('株')?'件':'笔'}</div>
-        </div>
-        <div class="sc-right">
-          <div class="sc-unrealized ${cls(gRealized)}">${fmt(gRealized)}</div>
-          <div class="sc-rate ${cls(gRate)}">${fmtRate(gRate)}</div>
-        </div>
-      </div>
-      ${isOpen?renderRealizedDetail(g):''}
-    `;
-    list.appendChild(card);
-  });
-}
-
-function renderRealizedDetail(g){
-  const cur = t('currency');
-  let html=`<div class="stock-detail"><div class="detail-section-title">${t('realizedTrades')}</div>`;
-  const sorted=[...g.closed].sort((a,b)=>new Date(b.date)-new Date(a.date));
-  sorted.forEach(tr=>{
-    const cost=tr.buyPrice*tr.shares+(tr.fee||0);
-    const p=(tr.sellPrice-tr.buyPrice)*tr.shares-(tr.fee||0);
-    const r=cost>0?(p/cost*100):0;
-    html+=`<div class="realized-row">
-      <div>
-        <div class="hr-date">${tr.date}</div>
-        <div class="hr-detail">${t('buyWord')} ${cur}${tr.buyPrice} ${t('sellWord')} ${cur}${tr.sellPrice} × ${tr.shares}${t('hintShares')}${tr.fee?` ｜${t('feeWord')} ${cur}${tr.fee}`:''}${tr.note?` ｜${tr.note}`:''}</div>
-      </div>
-      <div style="display:flex;align-items:center;gap:6px">
+      const p=cp?(cp.price-tr.buyPrice)*tr.shares-(tr.fee||0):null;
+      const r=p!=null&&cost>0?(p/cost*100):null;
+      html+=`<div class="lot-row">
         <div>
-          <div class="rr-profit ${cls(p)}">${fmt(p)}</div>
-          <div class="rr-rate">${fmtRate(r)}</div>
+          <div class="lr-date">${tr.date}</div>
+          <div class="lr-detail">${t('buyWord')} ${cur()}${tr.buyPrice} × ${tr.shares}${t('shares')}${tr.fee?` ｜${t('feeWord')} ${cur()}${tr.fee}`:''}${tr.note?` ｜${tr.note}`:''}</div>
+          ${p!=null?`<div class="lr-detail" style="margin-top:2px">${t('unrealizedLbl')}: <span style="font-family:var(--mono);color:${p>=0?'var(--accent)':'var(--loss)'}">${fmt(p)}</span>${r!=null?' ('+fmtRate(r)+')':''}</span></div>`:''}
         </div>
-        <button class="del-btn" onclick="deleteTrade(${tr._idx},event)">×</button>
-      </div>
-    </div>`;
-  });
-  html+='</div>';
-  return html;
+        <div class="lr-right">
+          <button class="btn-sell-lot" onclick="openSellModal(${tr._idx},event)">${t('sellBtn')}</button>
+          <button class="del-btn" onclick="openLotDetail(${tr._idx},event)">⋯</button>
+        </div>
+      </div>`;
+    });
+
+    html+=`</div></div>`;
+  }
+
+  card.innerHTML=html;
+
+  // draw mini chart after DOM insert
+  if(isOpen){
+    setTimeout(()=>{
+      const log=(priceLog[g.key]||[]).slice().sort((a,b)=>a.date.localeCompare(b.date));
+      if(log.length>0){
+        const canvas=card.querySelector('#cc-'+g.key);
+        if(canvas) drawMiniChart(canvas,log,avgBuy,g.closed);
+      }
+    },0);
+  }
+
+  return card;
+}
+
+function manualSetPrice(key,inputId){
+  const val=parseFloat(document.getElementById(inputId).value);
+  if(isNaN(val)||val<=0){ alert('请输入有效价格'); return; }
+  currentPrices[key]={price:val,source:'manual',updatedAt:new Date().toISOString()};
+  const today=new Date().toISOString().slice(0,10);
+  if(!priceLog[key]) priceLog[key]=[];
+  const idx=priceLog[key].findIndex(p=>p.date===today);
+  if(idx>=0) priceLog[key][idx]={date:today,price:val,source:'manual'};
+  else priceLog[key].push({date:today,price:val,source:'manual'});
+  priceLog[key].sort((a,b)=>a.date.localeCompare(b.date));
+  saveAll(); renderAll();
 }
 
 function toggleCard(key){
@@ -719,97 +684,173 @@ function toggleCard(key){
 }
 
 // ══════════════════════════════════════════════
-//  Chart
+//  Realized Tab
 // ══════════════════════════════════════════════
-let chartInstance = null;
+function renderRealized(){
+  const groups=getGroups();
+  const closedGroups=Object.values(groups).filter(g=>g.closed.length>0);
+  let totalRealized=0,totalCost=0;
+  closedGroups.forEach(g=>{
+    g.closed.forEach(tr=>{
+      totalCost+=tr.buyPrice*tr.shares+(tr.fee||0);
+      totalRealized+=(tr.sellPrice-tr.buyPrice)*tr.shares-(tr.fee||0);
+    });
+  });
+  const relEl=document.getElementById('sum-realized');
+  relEl.textContent=fmt(totalRealized);
+  relEl.className='tsi-val '+cls(totalRealized);
+  const rate=totalCost>0?(totalRealized/totalCost*100):0;
+  const rateEl=document.getElementById('sum-realized-rate');
+  rateEl.textContent=fmtRate(rate);
+  rateEl.className='tsi-sub '+cls(rate);
 
+  const list=document.getElementById('realized-list');
+  if(closedGroups.length===0){
+    list.innerHTML=`<div class="empty-state"><div>💰</div>${t('emptyRealized')}</div>`;
+    return;
+  }
+  list.innerHTML='';
+  closedGroups.forEach(g=>{
+    let gR=0,gC=0;
+    g.closed.forEach(tr=>{ gC+=tr.buyPrice*tr.shares+(tr.fee||0); gR+=(tr.sellPrice-tr.buyPrice)*tr.shares-(tr.fee||0); });
+    const gRate=gC>0?(gR/gC*100):0;
+    const isOpen=expandedCards.has('r-'+g.key);
+    const card=document.createElement('div');
+    card.className='realized-card';
+    let html=`
+    <div class="rc-header" onclick="toggleCard('r-${g.key}')" style="cursor:pointer;">
+      <div><div class="rc-code">${g.code||'—'}</div><div class="rc-name">${g.name||'—'}</div></div>
+      <div style="text-align:right">
+        <div class="rc-total ${cls(gR)}">${fmt(gR)}</div>
+        <div class="rc-rate ${cls(gRate)}">${fmtRate(gRate)}</div>
+      </div>
+    </div>`;
+    if(isOpen){
+      const sorted=[...g.closed].sort((a,b)=>new Date(b.date)-new Date(a.date));
+      sorted.forEach(tr=>{
+        const cost=tr.buyPrice*tr.shares+(tr.fee||0);
+        const p=(tr.sellPrice-tr.buyPrice)*tr.shares-(tr.fee||0);
+        const r=cost>0?(p/cost*100):0;
+        html+=`<div class="lot-row">
+          <div>
+            <div class="lr-date">${tr.date}</div>
+            <div class="lr-detail">${t('buyWord')} ${cur()}${tr.buyPrice} → ${t('sellWord')} ${cur()}${tr.sellPrice} × ${tr.shares}${t('shares')}${tr.fee?` ｜${cur()}${tr.fee}`:''}${tr.note?` ｜${tr.note}`:''}</div>
+          </div>
+          <div class="lr-right">
+            <div>
+              <div class="lr-profit ${cls(p)}">${fmt(p)}</div>
+              <div class="lr-rate">${fmtRate(r)}</div>
+            </div>
+            <button class="del-btn" onclick="openLotDetail(${tr._idx},event)">⋯</button>
+          </div>
+        </div>`;
+      });
+    }
+    card.innerHTML=html;
+    list.appendChild(card);
+    // add gap
+    const spacer=document.createElement('div');
+    spacer.style.height='10px';
+    list.appendChild(spacer);
+  });
+}
+
+// ══════════════════════════════════════════════
+//  Chart Tab
+// ══════════════════════════════════════════════
 function updateChartSelect(){
-  const sel = document.getElementById('chart-stock-select');
-  const groups = getGroups();
-  const keys = Object.keys(groups);
-  const prev = sel.value;
-  sel.innerHTML = keys.map(k=>`<option value="${k}">${groups[k].code||groups[k].name} ${groups[k].name||''}</option>`).join('');
+  const sel=document.getElementById('chart-stock-select');
+  const groups=getGroups();
+  const keys=Object.keys(groups);
+  const prev=sel.value;
+  sel.innerHTML=keys.length===0?`<option value="">${t('emptyHoldings')}</option>`
+    :keys.map(k=>`<option value="${k}">${groups[k].code||''} ${groups[k].name||''}</option>`).join('');
   if(keys.includes(prev)) sel.value=prev;
 }
 
-function renderChart(){
-  const sel = document.getElementById('chart-stock-select');
-  const key = sel.value;
-  if(!key) return;
-
-  const groups = getGroups();
-  const g = groups[key];
-  const log = (priceLog[key]||[]).slice().sort((a,b)=>a.date.localeCompare(b.date));
-
-  const emptyEl = document.getElementById('chart-empty');
-  const canvas = document.getElementById('price-chart');
-
+function renderChartTab(){
+  const sel=document.getElementById('chart-stock-select');
+  const key=sel.value; if(!key) return;
+  const groups=getGroups();
+  const g=groups[key]; if(!g) return;
+  const log=(priceLog[key]||[]).slice().sort((a,b)=>a.date.localeCompare(b.date));
+  const canvas=document.getElementById('main-chart');
+  const emptyEl=document.getElementById('chart-empty-main');
   if(log.length===0){
-    emptyEl.style.display='flex';
-    canvas.style.display='none';
-    document.getElementById('price-history-list').innerHTML=`<div style="color:var(--text3);font-size:12px">${t('noPrice')}</div>`;
-    return;
+    canvas.style.visibility='hidden';
+    emptyEl.style.display='flex'; emptyEl.textContent=t('noPrice');
+  } else {
+    canvas.style.visibility='visible';
+    emptyEl.style.display='none';
+    let wBuy=0,tSh=0;
+    [...g.holdings,...g.closed].forEach(tr=>{ wBuy+=tr.buyPrice*tr.shares; tSh+=tr.shares; });
+    const avgBuy=tSh>0?wBuy/tSh:null;
+    drawMiniChart(canvas,log,avgBuy,g.closed,true);
   }
-  emptyEl.style.display='none';
-  canvas.style.display='block';
-
-  // avg buy price
-  let totalCost=0, totalShares=0;
-  [...(g.holdings||[]),...(g.closed||[])].forEach(tr=>{
-    totalCost+=tr.buyPrice*tr.shares; totalShares+=tr.shares;
+  // price log list
+  const listEl=document.getElementById('price-history-list');
+  if(log.length===0){ listEl.innerHTML=`<div style="color:var(--text3);font-size:12px;">${t('noPrice')}</div>`; return; }
+  listEl.innerHTML='';
+  listEl.className='price-log-list';
+  [...log].reverse().forEach(p=>{
+    const row=document.createElement('div');
+    row.className='pl-row';
+    row.innerHTML=`
+      <div>
+        <div style="font-family:var(--mono);font-size:11px;color:var(--text2)">${p.date}</div>
+        <div style="font-size:10px;color:var(--text3)">${p.source==='auto'?'auto':'manual'}</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <span style="font-family:var(--mono);font-size:13px;">${cur()}${p.price.toFixed(2)}</span>
+        <button class="del-btn" onclick="deletePriceLog('${key}','${p.date}')">×</button>
+      </div>`;
+    listEl.appendChild(row);
   });
-  const avgBuy = totalShares>0?totalCost/totalShares:null;
-
-  // sell prices from closed trades
-  const sellPoints = {};
-  (g.closed||[]).forEach(tr=>{ sellPoints[tr.date]=(sellPoints[tr.date]||[]); sellPoints[tr.date].push(tr.sellPrice); });
-
-  const labels = log.map(p=>p.date);
-  const prices = log.map(p=>p.price);
-  const avgLine = labels.map(()=>avgBuy);
-  const sellLine = labels.map(l=>sellPoints[l]?sellPoints[l][0]:null);
-
-  // destroy previous
-  if(chartInstance){ chartInstance.destroy(); chartInstance=null; }
-
-  const ctx = canvas.getContext('2d');
-  // simple canvas chart
-  drawChart(ctx, canvas, labels, prices, avgLine, sellLine, avgBuy);
-
-  // History list
-  renderPriceHistoryList(key);
 }
 
-function drawChart(ctx, canvas, labels, prices, avgLine, sellLine, avgBuy){
-  const W = canvas.offsetWidth * devicePixelRatio;
-  const H = canvas.offsetHeight * devicePixelRatio;
-  canvas.width = W; canvas.height = H;
-  ctx.scale(devicePixelRatio, devicePixelRatio);
-  const w = canvas.offsetWidth, h = canvas.offsetHeight;
+function deletePriceLog(key,date){
+  if(!confirm(t('deletePriceLog'))) return;
+  priceLog[key]=(priceLog[key]||[]).filter(p=>p.date!==date);
+  saveAll(); renderChartTab();
+}
 
-  const pad = {top:20, right:16, bottom:40, left:60};
-  const cw = w-pad.left-pad.right, ch = h-pad.top-pad.bottom;
+// ══════════════════════════════════════════════
+//  Canvas Chart
+// ══════════════════════════════════════════════
+function drawMiniChart(canvas,log,avgBuy,closedTrades,large){
+  const dpr=window.devicePixelRatio||1;
+  const W=canvas.offsetWidth, H=canvas.offsetHeight||200;
+  canvas.width=W*dpr; canvas.height=H*dpr;
+  const ctx=canvas.getContext('2d');
+  ctx.scale(dpr,dpr);
+  const pad={top:16,right:14,bottom:36,left:56};
+  const cw=W-pad.left-pad.right, ch=H-pad.top-pad.bottom;
 
-  const allVals = [...prices, ...avgLine.filter(Boolean), ...sellLine.filter(Boolean)];
-  const minV = Math.min(...allVals)*0.98, maxV = Math.max(...allVals)*1.02;
-  const range = maxV-minV||1;
+  const prices=log.map(p=>p.price);
+  const labels=log.map(p=>p.date);
+  const sellMap={};
+  (closedTrades||[]).forEach(tr=>{ if(!sellMap[tr.date]) sellMap[tr.date]=[]; sellMap[tr.date].push(tr.sellPrice); });
 
-  const xOf = i => pad.left + (i/(labels.length-1||1))*cw;
-  const yOf = v => pad.top + (1-(v-minV)/range)*ch;
+  const allV=[...prices, avgBuy].filter(Boolean);
+  Object.values(sellMap).flat().forEach(v=>allV.push(v));
+  const minV=Math.min(...allV)*0.985, maxV=Math.max(...allV)*1.015;
+  const range=maxV-minV||1;
 
-  ctx.clearRect(0,0,w,h);
+  const xOf=i=>pad.left+(i/(labels.length-1||1))*cw;
+  const yOf=v=>pad.top+(1-(v-minV)/range)*ch;
+
+  ctx.clearRect(0,0,W,H);
 
   // grid
-  ctx.strokeStyle='rgba(31,45,69,0.8)'; ctx.lineWidth=1;
   for(let i=0;i<=4;i++){
     const y=pad.top+i/4*ch;
+    ctx.strokeStyle='rgba(31,45,69,0.9)'; ctx.lineWidth=1;
     ctx.beginPath(); ctx.moveTo(pad.left,y); ctx.lineTo(pad.left+cw,y); ctx.stroke();
-    const val=(maxV-i/4*range).toFixed(2);
-    ctx.fillStyle='#3d5070'; ctx.font=`${10*devicePixelRatio/devicePixelRatio}px DM Mono,monospace`;
-    ctx.textAlign='right'; ctx.fillText(val, pad.left-6, y+4);
+    ctx.fillStyle='#3d5070'; ctx.font='9px DM Mono,monospace'; ctx.textAlign='right';
+    ctx.fillText((maxV-i/4*range).toFixed(2),pad.left-5,y+3.5);
   }
 
-  // avg buy line (dashed yellow)
+  // avg buy line
   if(avgBuy){
     const yA=yOf(avgBuy);
     ctx.strokeStyle='#f5c842'; ctx.lineWidth=1.5; ctx.setLineDash([5,4]);
@@ -817,86 +858,129 @@ function drawChart(ctx, canvas, labels, prices, avgLine, sellLine, avgBuy){
     ctx.setLineDash([]);
   }
 
-  // sell points line
-  const sellPts = labels.map((l,i)=>sellLine[i]!=null?{x:xOf(i),y:yOf(sellLine[i]),v:sellLine[i]}:null).filter(Boolean);
-  sellPts.forEach(p=>{
-    ctx.fillStyle='#ff5c7a';
-    ctx.beginPath(); ctx.arc(p.x,p.y,5,0,Math.PI*2); ctx.fill();
+  // sell dots
+  labels.forEach((l,i)=>{
+    if(sellMap[l]){
+      sellMap[l].forEach(sv=>{
+        ctx.fillStyle='#ff5c7a';
+        ctx.beginPath(); ctx.arc(xOf(i),yOf(sv),5,0,Math.PI*2); ctx.fill();
+      });
+    }
   });
 
   // price line
   ctx.strokeStyle='#00e5a0'; ctx.lineWidth=2; ctx.setLineDash([]);
   ctx.beginPath();
-  prices.forEach((v,i)=>{ const x=xOf(i),y=yOf(v); i===0?ctx.moveTo(x,y):ctx.lineTo(x,y); });
+  prices.forEach((v,i)=>{ i===0?ctx.moveTo(xOf(i),yOf(v)):ctx.lineTo(xOf(i),yOf(v)); });
   ctx.stroke();
 
-  // dots
+  // price dots
   prices.forEach((v,i)=>{
     ctx.fillStyle='#00e5a0';
-    ctx.beginPath(); ctx.arc(xOf(i),yOf(v),3.5,0,Math.PI*2); ctx.fill();
+    ctx.beginPath(); ctx.arc(xOf(i),yOf(v),3,0,Math.PI*2); ctx.fill();
   });
 
   // x labels
   ctx.fillStyle='#3d5070'; ctx.textAlign='center'; ctx.font='9px DM Mono,monospace';
-  const step = Math.max(1,Math.floor(labels.length/5));
-  labels.forEach((l,i)=>{ if(i%step===0||i===labels.length-1) ctx.fillText(l.slice(5),xOf(i),h-pad.bottom+14); });
-}
-
-function renderPriceHistoryList(key){
-  const log = (priceLog[key]||[]).slice().reverse();
-  const el = document.getElementById('price-history-list');
-  if(!log.length){ el.innerHTML=`<div style="color:var(--text3);font-size:12px">${t('noPrice')}</div>`; return; }
-  el.innerHTML = log.map(p=>`
-    <div style="display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid var(--border);">
-      <div>
-        <div style="font-family:var(--mono);font-size:11px;color:var(--text2)">${p.date}</div>
-        <div style="font-size:10px;color:var(--text3)">${p.source==='auto'?t('badgeAuto'):t('badgeManual')}</div>
-      </div>
-      <div style="display:flex;align-items:center;gap:8px">
-        <div style="font-family:var(--mono);font-size:13px">${t('currency')}${p.price.toFixed(2)}</div>
-        <button class="del-btn" onclick="deletePriceLog('${key}','${p.date}')">×</button>
-      </div>
-    </div>
-  `).join('');
-}
-
-function deletePriceLog(key, date){
-  if(!confirm('删除该价格记录？')) return;
-  priceLog[key] = (priceLog[key]||[]).filter(p=>p.date!==date);
-  saveAll(); renderChart();
+  const step=Math.max(1,Math.floor(labels.length/5));
+  labels.forEach((l,i)=>{ if(i%step===0||i===labels.length-1) ctx.fillText(l.slice(5),xOf(i),H-pad.bottom+13); });
 }
 
 // ══════════════════════════════════════════════
-//  Modal / Trades
+//  Buy Modal
 // ══════════════════════════════════════════════
-function openModal(){
-  document.getElementById('modal').classList.add('open');
+function openBuyModal(){
+  document.getElementById('buy-modal').classList.add('open');
   document.getElementById('f-date').valueAsDate=new Date();
 }
-function closeModal(){
-  document.getElementById('modal').classList.remove('open');
-  ['f-code','f-name','f-buy-price','f-shares','f-sell-price','f-fee','f-note'].forEach(id=>{ document.getElementById(id).value=''; });
+function closeBuyModal(){
+  document.getElementById('buy-modal').classList.remove('open');
+  ['f-code','f-name','f-buy-price','f-shares','f-fee','f-note'].forEach(id=>{ document.getElementById(id).value=''; });
 }
-function handleOverlayClick(e){ if(e.target===document.getElementById('modal')) closeModal(); }
-
-function saveTrade(){
+function saveBuy(){
   const code=document.getElementById('f-code').value.trim().toUpperCase();
   const name=document.getElementById('f-name').value.trim();
   const date=document.getElementById('f-date').value;
   const buyPrice=parseFloat(document.getElementById('f-buy-price').value);
   const shares=parseFloat(document.getElementById('f-shares').value);
-  const sellPrice=parseFloat(document.getElementById('f-sell-price').value)||null;
   const fee=parseFloat(document.getElementById('f-fee').value)||0;
   const note=document.getElementById('f-note').value.trim();
   if((!code&&!name)||!date||isNaN(buyPrice)||isNaN(shares)){ alert(t('alertRequired')); return; }
-  trades.push({code,name,date,buyPrice,shares,sellPrice,fee,note});
-  saveAll(); renderAll(); closeModal();
+  trades.push({code,name,date,buyPrice,shares,sellPrice:null,fee,note});
+  saveAll(); renderAll(); closeBuyModal();
 }
 
-function deleteTrade(idx, e){
-  e.stopPropagation();
+// ══════════════════════════════════════════════
+//  Sell Modal
+// ══════════════════════════════════════════════
+let sellTargetIdx=null;
+function openSellModal(tradeIdx, e){
+  e && e.stopPropagation();
+  const tr=trades[tradeIdx]; if(!tr) return;
+  sellTargetIdx=tradeIdx;
+  document.getElementById('s-code').value=tr.code||'';
+  document.getElementById('s-name').value=tr.name||'';
+  document.getElementById('s-buy-price').value=tr.buyPrice;
+  document.getElementById('s-shares').value=tr.shares;
+  document.getElementById('s-date').valueAsDate=new Date();
+  document.getElementById('s-sell-price').value='';
+  document.getElementById('s-fee').value='';
+  document.getElementById('s-note').value='';
+  document.getElementById('sell-modal').classList.add('open');
+}
+function closeSellModal(){
+  document.getElementById('sell-modal').classList.remove('open');
+  sellTargetIdx=null;
+}
+function saveSell(){
+  if(sellTargetIdx===null) return;
+  const date=document.getElementById('s-date').value;
+  const sellPrice=parseFloat(document.getElementById('s-sell-price').value);
+  const fee=parseFloat(document.getElementById('s-fee').value)||0;
+  const note=document.getElementById('s-note').value.trim();
+  if(!date||isNaN(sellPrice)||sellPrice<=0){ alert(t('alertSellRequired')); return; }
+  trades[sellTargetIdx]={...trades[sellTargetIdx], sellPrice, date, fee:((trades[sellTargetIdx].fee||0)+fee)||0, note:note||trades[sellTargetIdx].note};
+  // update date to sell date
+  trades[sellTargetIdx].sellDate=date;
+  saveAll(); renderAll(); closeSellModal();
+}
+
+// ══════════════════════════════════════════════
+//  Lot Detail / Delete Modal
+// ══════════════════════════════════════════════
+let lotDetailIdx=null;
+function openLotDetail(tradeIdx, e){
+  e && e.stopPropagation();
+  const tr=trades[tradeIdx]; if(!tr) return;
+  lotDetailIdx=tradeIdx;
+  const profit=tr.sellPrice?((tr.sellPrice-tr.buyPrice)*tr.shares-(tr.fee||0)):null;
+  const cost=tr.buyPrice*tr.shares+(tr.fee||0);
+  const rate=profit!=null&&cost>0?(profit/cost*100):null;
+  document.getElementById('lot-modal-body').innerHTML=`
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div style="display:flex;justify-content:space-between;"><span style="color:var(--text3);font-size:12px">${t('codeName')}</span><span style="font-family:var(--mono)">${tr.code||''} ${tr.name||''}</span></div>
+      <div style="display:flex;justify-content:space-between;"><span style="color:var(--text3);font-size:12px">${t('date')}</span><span style="font-family:var(--mono)">${tr.date}</span></div>
+      <div style="display:flex;justify-content:space-between;"><span style="color:var(--text3);font-size:12px">${t('buyInfo')}</span><span style="font-family:var(--mono)">${cur()}${tr.buyPrice} × ${tr.shares}${t('shares')}</span></div>
+      ${tr.sellPrice?`<div style="display:flex;justify-content:space-between;"><span style="color:var(--text3);font-size:12px">${t('sellPrice')}</span><span style="font-family:var(--mono)">${cur()}${tr.sellPrice}</span></div>`:''}
+      ${tr.fee?`<div style="display:flex;justify-content:space-between;"><span style="color:var(--text3);font-size:12px">${t('fee')}</span><span style="font-family:var(--mono)">${cur()}${tr.fee}</span></div>`:''}
+      ${tr.note?`<div style="display:flex;justify-content:space-between;"><span style="color:var(--text3);font-size:12px">${t('note')}</span><span>${tr.note}</span></div>`:''}
+      ${profit!=null?`<div style="background:var(--surface2);border-radius:10px;padding:12px;text-align:center;margin-top:4px;">
+        <div style="font-size:10px;color:var(--text3);margin-bottom:6px">${t('realizedTotal')}</div>
+        <div style="font-family:var(--mono);font-size:20px;font-weight:500;color:${profit>=0?'var(--accent)':'var(--loss)'}">${fmt(profit)}</div>
+        <div style="font-family:var(--mono);font-size:12px;color:${profit>=0?'var(--accent)':'var(--loss)'};margin-top:4px">${rate!=null?fmtRate(rate):''}</div>
+      </div>`:''}
+    </div>`;
+  document.getElementById('lot-delete-btn').onclick=()=>deleteLot(tradeIdx);
+  document.getElementById('lot-modal').classList.add('open');
+}
+function closeLotModal(){
+  document.getElementById('lot-modal').classList.remove('open');
+  lotDetailIdx=null;
+}
+function deleteLot(idx){
   if(!confirm(t('confirmDelete'))) return;
-  trades.splice(idx,1); saveAll(); renderAll();
+  trades.splice(idx,1);
+  saveAll(); renderAll(); closeLotModal();
 }
 
 // ══════════════════════════════════════════════
@@ -913,18 +997,16 @@ function importData(e){
   reader.onload=ev=>{
     try{
       const data=JSON.parse(ev.target.result);
-      // support old format (array) and new format (object)
       if(Array.isArray(data)){
         if(confirm(`${data.length} ${t('confirmImport')}`)){trades=[...trades,...data];saveAll();renderAll();}
       } else if(data.trades){
-        const msg=`${data.trades.length} ${t('confirmImport')}`;
-        if(confirm(msg)){
+        if(confirm(`${data.trades.length} ${t('confirmImport')}`)){
           trades=[...trades,...(data.trades||[])];
           Object.entries(data.priceLog||{}).forEach(([k,v])=>{
             priceLog[k]=[...(priceLog[k]||[]),...v];
             priceLog[k].sort((a,b)=>a.date.localeCompare(b.date));
           });
-          Object.assign(currentPrices, data.currentPrices||{});
+          Object.assign(currentPrices,data.currentPrices||{});
           saveAll(); renderAll();
         }
       } else throw new Error();
@@ -937,19 +1019,26 @@ function clearAll(){
 }
 
 // ══════════════════════════════════════════════
-//  i18n apply
+//  i18n
 // ══════════════════════════════════════════════
 function applyI18n(){
   const m={
-    'app-title':'appTitle','lbl-unrealized':'unrealized','lbl-market-val':'marketVal',
+    'app-title':'appTitle',
+    'lbl-unrealized':'unrealized','lbl-market-val':'marketVal',
     'lbl-holdings':'holdings','lbl-realized-total':'realizedTotal','lbl-realized-stocks':'realizedStocks',
     'lbl-chart-title':'chartTitle','lbl-price-history':'priceHistory',
     'tab-positions':'tabPositions','tab-realized':'tabRealized','tab-chart':'tabChart',
     'btn-export':'export','btn-import':'import','btn-clear':'clear','fab-btn':'fab',
-    'modal-title':'modalTitle','lbl-code-name':'codeName','hint-code':'hintCode',
-    'lbl-date':'date','lbl-buy-info':'buyInfo','hint-buy-price':'hintBuyPrice','hint-shares':'hintShares',
-    'lbl-sell-price':'sellPrice','lbl-fee':'fee','lbl-note':'note',
-    'btn-cancel':'cancel','btn-save':'save',
+    'modal-buy-title':'modalBuyTitle','modal-sell-title':'modalSellTitle',
+    'lbl-code-name':'codeName','hint-code':'hintCode',
+    'lbl-date':'date','lbl-buy-info':'buyInfo',
+    'hint-buy-price':'hintBuyPrice','hint-shares':'hintShares',
+    'lbl-fee':'fee','lbl-note':'note','btn-cancel':'cancel','btn-save':'save',
+    'lbl-sell-stock':'sellStock','lbl-sell-buy-info':'sellBuyInfo',
+    'hint-s-buy-price':'hintBuyPrice','hint-s-shares':'hintShares',
+    'lbl-sell-date':'sellDate','lbl-sell-price':'sellPrice',
+    'lbl-sell-fee':'sellFee','lbl-sell-note':'sellNote',
+    'btn-sell-cancel':'sellCancel','btn-sell-save':'sellSave',
     'legend-price':'legendPrice','legend-buy':'legendBuy','legend-sell':'legendSell',
   };
   Object.entries(m).forEach(([id,key])=>{ const el=document.getElementById(id); if(el) el.textContent=t(key); });
@@ -957,7 +1046,6 @@ function applyI18n(){
   document.getElementById('f-name').placeholder=t('namePh');
   document.getElementById('f-buy-price').placeholder=t('buyPricePh');
   document.getElementById('f-shares').placeholder=t('sharesPh');
-  document.getElementById('f-sell-price').placeholder=t('sellPricePh');
   document.getElementById('f-fee').placeholder=t('feePh');
   document.getElementById('f-note').placeholder=t('notePh');
   document.title=t('appTitle');
@@ -965,14 +1053,13 @@ function applyI18n(){
 
 function setLang(l){
   lang=l; localStorage.setItem('stock_lang',l);
-  document.documentElement.style.setProperty('--sans', l==='ja'?"'Noto Sans JP',sans-serif":"'Noto Sans SC',sans-serif");
+  document.documentElement.style.setProperty('--sans',l==='ja'?"'Noto Sans JP',sans-serif":"'Noto Sans SC',sans-serif");
   document.querySelectorAll('.lang-btn').forEach(b=>{
-    b.classList.toggle('active', b.textContent.trim()===(l==='zh'?'中文':l==='en'?'EN':'日本語'));
+    b.classList.toggle('active',b.textContent.trim()===(l==='zh'?'中文':l==='en'?'EN':'日本語'));
   });
   applyI18n(); renderAll();
 }
 
-// ── Init ──
 setLang(lang);
 renderAll();
 </script>
